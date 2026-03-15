@@ -46,6 +46,21 @@ export function dataForTable({ fields, translate, moneyFormatter, dateFormat }) 
           />
         ),
       },
+      leadScore: {
+        title: field.label ? translate(field.label) : translate(key),
+        dataIndex: keyIndex,
+        render: (_, record) => {
+          const score = record[key] || 0;
+          let color = 'red';
+          if (score >= 40 && score < 70) color = 'orange';
+          if (score >= 70) color = 'green';
+          return (
+            <Tag bordered={false} color={color}>
+              {score}%
+            </Tag>
+          );
+        },
+      },
       date: {
         title: field.label ? translate(field.label) : translate(key),
         dataIndex: keyIndex,

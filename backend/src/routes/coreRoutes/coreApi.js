@@ -6,8 +6,14 @@ const router = express.Router();
 
 const adminController = require('@/controllers/coreControllers/adminController');
 const settingController = require('@/controllers/coreControllers/settingController');
+const dashboardController = require('@/controllers/coreControllers/dashboardController');
 
 const { singleStorageUpload } = require('@/middlewares/uploadMiddleware');
+
+//_______________________________ Dashboard Predictions _______________________________
+
+router.route('/dashboard/sales-prediction').get(catchErrors(dashboardController.salesPrediction));
+router.route('/dashboard/inventory-prediction').get(catchErrors(dashboardController.inventoryPrediction));
 
 // //_______________________________ Admin management_______________________________
 

@@ -15,4 +15,8 @@ export const fields = {
   email: {
     type: 'email',
   },
+  leadScore: {
+    type: 'leadScore',
+    title: 'Lead Score (%)',
+  },
 };

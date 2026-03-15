@@ -47,6 +47,23 @@ const create = async (req, res) => {
   body['paymentStatus'] = paymentStatus;
   body['createdBy'] = req.admin._id;
 
+  // AI Fraud Detection Logic
+  // Check if invoice total is unusually high compared to client history
+  const clientInvoices = await Model.find({ client: body['client'], removed: false });
+  if (clientInvoices.length > 2) { // Need at least 2 past invoices for history
+    const totalHistoryAmount = clientInvoices.reduce((acc, curr) => acc + (curr.total || 0), 0);
+    const avgAmount = totalHistoryAmount / clientInvoices.length;
+    
+    // If the new invoice is 3x larger than the historical average, flag as suspicious
+    if (avgAmount > 0 && total > avgAmount * 3) {
+      body['isSuspicious'] = true;
+      body['fraudRiskScore'] = Math.min(Math.round((total / avgAmount) * 10), 99); // Generates a logic score
+    } else {
+      body['isSuspicious'] = false;
+      body['fraudRiskScore'] = 0;
+    }
+  }
+
   // Creating a new document in the collection
   const result = await new Model(body).save();
   const fileId = 'invoice-' + result._id + '.pdf';
@@ -63,12 +80,24 @@ const create = async (req, res) => {
     settingKey: 'last_invoice_number',
   });
 
+  await updateClientLeadScore(body['client']);
+
   // Returning successfull response
   return res.status(200).json({
     success: true,
     result: updateResult,
     message: 'Invoice created successfully',
   });
+};
+
+const updateClientLeadScore = async (clientId) => {
+  const Client = mongoose.model('Client');
+  const client = await Client.findById(clientId);
+  if (client) {
+    client.interactionsCount = (client.interactionsCount || 0) + 1;
+    client.leadScore = Math.min((client.leadScore || 0) + 10, 100); // Add 10 points per invoice
+    await client.save();
+  }
 };
 
 module.exports = create;

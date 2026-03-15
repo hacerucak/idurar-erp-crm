@@ -14,6 +14,8 @@ import RecentTable from './components/RecentTable';
 import SummaryCard from './components/SummaryCard';
 import PreviewCard from './components/PreviewCard';
 import CustomerPreviewCard from './components/CustomerPreviewCard';
+import PredictionCard from './components/PredictionCard';
+import InventoryAIWidget from './components/InventoryAIWidget';
 
 import { selectMoneyFormat } from '@/redux/settings/selectors';
 import { useSelector } from 'react-redux';
@@ -46,6 +48,14 @@ export default function DashboardModule() {
 
   const { result: clientResult, isLoading: clientLoading } = useFetch(() =>
     request.summary({ entity: 'client' })
+  );
+
+  const { result: salesPredResult, isLoading: salesPredLoading } = useFetch(() =>
+    request.get({ entity: 'dashboard/sales-prediction' })
+  );
+
+  const { result: inventoryPredResult, isLoading: inventoryPredLoading } = useFetch(() =>
+    request.get({ entity: 'dashboard/inventory-prediction' })
   );
 
   useEffect(() => {
@@ -140,6 +150,12 @@ export default function DashboardModule() {
             isLoading={quoteLoading}
             data={quoteResult?.total}
           />
+          <PredictionCard
+            title={'Gelecek Ay Satış Tahmini (AI)'} // Kept in Turkish to match task request
+            isLoading={salesPredLoading}
+            prediction={salesPredResult?.prediction}
+            trend={salesPredResult?.trend}
+          />
           <SummaryCard
             title={translate('paid')}
             prefix={translate('This month')}
@@ -168,6 +184,23 @@ export default function DashboardModule() {
               activeCustomer={clientResult?.active}
               newCustomer={clientResult?.new}
             />
+          </Col>
+        </Row>
+        <div className="space30"></div>
+        <Row gutter={[32, 32]}>
+          <Col className="gutter-row w-full" sm={{ span: 24 }} lg={{ span: 12 }}>
+            <InventoryAIWidget 
+              isLoading={inventoryPredLoading} 
+              predictions={inventoryPredResult?.result || []} 
+            />
+          </Col>
+          <Col className="gutter-row w-full" sm={{ span: 24 }} lg={{ span: 12 }}>
+            <div className="whiteBox shadow pad20" style={{ height: '100%' }}>
+              <h3 style={{ color: '#22075e', marginBottom: 5, padding: '0 20px 20px' }}>
+                {translate('Recent Quotes')}
+              </h3>
+              <RecentTable entity={'quote'} dataTableColumns={dataTableColumns} />
+            </div>
           </Col>
         </Row>
         <div className="space30"></div>

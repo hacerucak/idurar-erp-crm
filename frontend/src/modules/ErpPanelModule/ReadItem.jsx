@@ -138,6 +138,11 @@ export default function ReadItem({ config, selectedItem }) {
               {currentErp.paymentStatus && translate(currentErp.paymentStatus)}
             </span>
           ),
+          currentErp.isSuspicious && (
+            <Tag color="error" key="suspicious">
+              🚨 Olağandışı Fatura Tespit Edildi (Risk: %{currentErp.fraudRiskScore})
+            </Tag>
+          ),
         ]}
         extra={[
           <Button

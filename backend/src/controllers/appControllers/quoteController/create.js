@@ -50,6 +50,8 @@ const create = async (req, res) => {
     settingKey: 'last_quote_number',
   });
 
+  await updateClientLeadScore(body['client']);
+
   // Returning successfull response
   return res.status(200).json({
     success: true,
@@ -57,4 +59,15 @@ const create = async (req, res) => {
     message: 'Quote created successfully',
   });
 };
+
+const updateClientLeadScore = async (clientId) => {
+  const Client = mongoose.model('Client');
+  const client = await Client.findById(clientId);
+  if (client) {
+    client.interactionsCount = (client.interactionsCount || 0) + 1;
+    client.leadScore = Math.min((client.leadScore || 0) + 5, 100); // Add 5 points per quote
+    await client.save();
+  }
+};
+
 module.exports = create;

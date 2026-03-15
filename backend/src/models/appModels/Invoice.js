@@ -173,6 +173,14 @@ const invoiceSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  isSuspicious: {
+    type: Boolean,
+    default: false,
+  },
+  fraudRiskScore: {
+    type: Number,
+    default: 0,
+  },
 });
 
 invoiceSchema.plugin(require('mongoose-autopopulate'));

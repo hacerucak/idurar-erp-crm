@@ -20,6 +20,14 @@ const schema = new mongoose.Schema({
   email: String,
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
   assigned: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
+  leadScore: {
+    type: Number,
+    default: 0,
+  },
+  interactionsCount: {
+    type: Number,
+    default: 0,
+  },
   created: {
     type: Date,
     default: Date.now,

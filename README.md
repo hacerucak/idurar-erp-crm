@@ -2,9 +2,9 @@
     <a href="https://www.idurarapp.com/">
   <img src="https://avatars.githubusercontent.com/u/50052356?s=200&v=4" width="128px" />
     </a>
-    <h1>Open Source ERP / CRM Accounting Invoice Quote</h1>
+    <h1>Açık Kaynak ERP / CRM - Yapay Zeka (AI) Destekli</h1>
     <p align="center">
-        <p>IDURAR ERP CRM | Simple To Use</p>
+        <p>IDURAR ERP CRM | Kullanımı Kolay, Güçlü ve Akıllı</p>
     </p>
     
 
@@ -12,89 +12,72 @@
  Give a Star ⭐️ & Fork to this project ... Happy coding! 🤩`
 ```
 
-IDURAR is Open Source ERP / CRM (Invoice / Quote / Accounting ) Based on Advanced Mern Stack (Node.js / Express.js / MongoDb / React.js ) with Ant Design (AntD) and Redux
-
 </div>
 
-**🚀 Self-hosted Entreprise Version** : [https://cloud.idurarapp.com](https://cloud.idurarapp.com/)
+---
 
+## 🌟 Proje Hakkında (IDURAR ERP CRM)
 
-## Features :
+**IDURAR**, modern işletmelerin faturalama, muhasebe, müşteri yönetimi ve teklif süreçlerini yönetmek için tasarlanmış açık kaynaklı bir ERP / CRM sistemidir. Gelişmiş **MERN Stack** (Node.js, Express, MongoDB, React) mimarisi üzerine inşa edilmiştir ve kullanıcı arayüzü için **Ant Design (AntD)** ve durum yönetimi için **Redux** kullanır.
 
-Invoice Management
+### Temel Özellikler:
+- 📑 **Fatura Yönetimi:** Hızlı ve profesyonel faturalar oluşturun.
+- 💰 **Ödeme Takibi:** Tahsilatlarınızı ve bekleyen ödemeleri izleyin.
+- 📝 **Teklif Yönetimi:** Müşterilerinize saniyeler içinde teklif hazırlayın.
+- 👥 **Müşteri Yönetimi (CRM):** Müşteri ilişkilerinizi merkezi bir yerden yönetin.
+- 🎨 **Modern Arayüz:** Ant Design ile şık ve duyarlı (responsive) tasarım.
 
-Payment Management
+---
 
-Quote Management
+## 🤖 Benim Eklediğim Yapay Zeka (AI) Özellikleri
 
-Customer Management
+Bu projeyi çatalladıktan (fork) sonra, CRM deneyimini bir üst seviyeye taşımak için aşağıdaki **AI destekli** özellikleri sisteme entegre ettim. Bu özellikler, backend tarafında çalışan özel algoritmalar sayesinde işletmenize akıllı içgörüler sağlar:
 
-Ant Design Framework(AntD) 🐜
+### 1. 🎯 Lead Scoring AI (Müşteri Satın Alma Tahmini)
+Müşterilerin verilerini ve etkileşimlerini analiz ederek, hangilerinin satın alma ihtimalinin daha yüksek olduğunu tahmin eder.
+- **Nasıl Çalışır:** Müşterinin profil doluluğu, geçmiş teklifleri ve fatura geçmişine göre 0-100 arası bir puan üretir.
+- **Fayda:** Satış ekibinin en değerli potansiyel müşterilere odaklanmasını sağlar.
 
-Based on Mern Stack (Node.js / Express.js / MongoDb / React.js ) 👨‍💻
+### 2. 📈 Satış Tahmini (Sales Prediction)
+Gelecek ay ne kadar ciro yapabileceğinizi geçmiş verilere dayanarak tahmin eder.
+- **Nasıl Çalışır:** Son 12 ayın satış verilerini analiz eden bir regresyon mantığı kullanır.
+- **Fayda:** Finansal planlama ve hedef belirleme süreçlerini kolaylaştırır.
 
-### May i can use IDURAR for Commercial use :
+### 3. 📦 Akıllı Stok Tahmini (Smart Inventory)
+Hangi ürünlerin stoğunun ne zaman bitebileceğini önceden haber verir.
+- **Nasıl Çalışır:** Faturalardaki ürün hareketlerini analiz ederek günlük satış hızını hesaplar ve kritik stok seviyelerini tahmin eder.
+- **Fayda:** Stoksuz kalma riskini minimize eder.
 
-- Yes You can use IDURAR for free for personal or Commercial use.
+### 4. 🚨 Şüpheli İşlem Tespiti (Fraud Detection)
+Normalden sapma gösteren, hatalı veya şüpheli görünen faturaları otomatik olarak yakalar.
+- **Nasıl Çalışır:** Müşterinin geçmiş işlem ortalamalarından aşırı sapan tutarları tespit eder.
+- **Fayda:** Finansal hataları ve suistimalleri erkenden fark etmenizi sağlar.
 
-## Our Sponsors
+---
 
-  <a href="https://m.do.co/c/4ead8370b905?ref=idurarapp.com">
-    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="201px">
-  </a>
+## 🚀 Başlangıç (Kurulum)
 
-#
+Projeyi yerelinizde çalıştırmak için aşağıdaki adımları izleyin:
 
-<img width="1403" alt="Open Source ERP CRM" src="https://github.com/idurar/idurar-erp-crm/assets/136928179/a6712286-7ca6-4822-8902-fb7523533ee8">
+1. **Depoyu Klonlayın:** `git clone https://github.com/kullanici-adiniz/idurar-erp-crm.git`
+2. **MongoDB Ayarları:** MongoDB hesabınızı oluşturun ve bağlantı dizesini `.env` dosyasına ekleyin.
+3. **Bağımlılıkları Yükleyin:** 
+   - Backend için: `cd backend && npm install`
+   - Frontend için: `cd frontend && npm install`
+4. **Çalıştırın:**
+   - Backend: `npm run dev`
+   - Frontend: `npm run start`
 
-## Free Open Source ERP / CRM App
+---
 
-IDURAR is Open "Fair-Code" Source ERP / CRM (Invoice / Inventory / Accounting / HR) Based on Mern Stack (Node.js / Express.js / MongoDb / React.js ) with Ant Design (AntD) and Redux
+## 🛠️ Kullanılan Teknolojiler
+- **Frontend:** React.js, Redux, Ant Design
+- **Backend:** Node.js, Express.js
+- **Veritabanı:** MongoDB (Mongoose)
+- **AI Mantığı:** Custom Heuristic & Mathematical Prediction Algorithms (Node.js)
 
+## Lisans
+IDURAR, GNU Affero Genel Kamu Lisansı v3.0 altında yayınlanan ücretsiz ve açık kaynaklı bir yazılımdır.
 
-## Getting started
-
-1.[Clone the repository](INSTALLATION-INSTRUCTIONS.md#step-1-clone-the-repository)
-
-2.[Create Your MongoDB Account and Database Cluster](INSTALLATION-INSTRUCTIONS.md#Step-2-Create-Your-MongoDB-Account-and-Database-Cluster)
-
-3.[Edit the Environment File](INSTALLATION-INSTRUCTIONS.md#Step-3-Edit-the-Environment-File)
-
-4.[Update MongoDB URI](INSTALLATION-INSTRUCTIONS.md#Step-4-Update-MongoDB-URI)
-
-5.[Install Backend Dependencies](INSTALLATION-INSTRUCTIONS.md#Step-5-Install-Backend-Dependencies)
-
-6.[Run Setup Script](INSTALLATION-INSTRUCTIONS.md#Step-6-Run-Setup-Script)
-
-7.[Run the Backend Server](INSTALLATION-INSTRUCTIONS.md#Step-7-Run-the-Backend-Server)
-
-8.[Install Frontend Dependencies](INSTALLATION-INSTRUCTIONS.md#Step-8-Install-Frontend-Dependencies)
-
-9.[Run the Frontend Server](INSTALLATION-INSTRUCTIONS.md#Step-9-Run-the-Frontend-Server)
-
-## Contributing
-
-1.[How to contribute](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#how-to-contribute)
-
-2.[Reporting issues](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#reporting-issues)
-
-3.[Working on issues ](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#working-on-issues)
-
-4.[Submitting pull requests](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#submitting-pull-requests)
-
-5.[Commit Guidelines](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#commit-guidelines)
-
-6.[Coding Guidelines](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#coding-guidelines)
-
-7.[Questions](https://github.com/idurar/idurar-erp-crm/blob/master/CONTRIBUTING.md#questions)
-
-
-## Show your support
-
-Dont forget to give a ⭐️ to this project ... Happy coding!
-
-**🚀 Self-hosted Entreprise Version** : [https://cloud.idurarapp.com](https://cloud.idurarapp.com)
-
-## License
-
-IDURAR is Free Open Source Released under the GNU Affero General Public License v3.0.
+---
+*Bu proje geliştirilmeye devam etmektedir. Yıldız (Star) vererek destek olabilirsiniz!* ⭐
